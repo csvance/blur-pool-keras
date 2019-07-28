@@ -1,6 +1,8 @@
+import numpy as np
 from keras.layers import Layer
 from keras import backend as K
 import tensorflow as tf
+import keras
 
 
 class MaxBlurPooling1D(Layer):
