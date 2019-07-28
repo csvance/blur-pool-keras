@@ -24,11 +24,11 @@ class MaxBlurPooling1D(Layer):
             raise ValueError
 
         bk = bk / np.sum(bk)
-        bk = np.reshape(bk, (3, 1, 1))
+        bk = np.reshape(bk, (self.kernel_size, 1, 1))
         blur_init = keras.initializers.constant(bk)
 
         self.blur_kernel = self.add_weight(name='blur_kernel',
-                                           shape=(3, 1, 1),
+                                           shape=(self.kernel_size, 1, 1),
                                            initializer=blur_init,
                                            trainable=False)
 
@@ -135,7 +135,7 @@ class AverageBlurPooling1D(Layer):
             raise ValueError
 
         bk = bk / np.sum(bk)
-        bk = np.reshape(bk, (3, 1, 1))
+        bk = np.reshape(bk, (self.kernel_size, 1, 1))
         blur_init = keras.initializers.constant(bk)
 
         self.blur_kernel = self.add_weight(name='blur_kernel',
