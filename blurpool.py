@@ -48,7 +48,7 @@ class MaxBlurPooling1D(Layer):
 
         x = K.concatenate(dimensions, axis=-1)
         x = tf.nn.pool(x, (self.pool_size,), strides=(self.pool_size,),
-                       padding='SAME', pooling_type='MAX', data_format='NWC')
+                       padding='SAME', pooling_type='AVG', data_format='NWC')
 
         return x
 
