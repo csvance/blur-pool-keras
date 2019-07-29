@@ -30,6 +30,18 @@ class TestBlurPool(unittest.TestCase):
 
         model.predict([np.random.random((1, 224, 3))])
 
+    def test_blur_1d(self):
+
+        layer_input = Input((224, 3))
+        layer_pool = BlurPool1D()(layer_input)
+        layer_flatten = Flatten()(layer_pool)
+        layer_dense = Dense(1)(layer_flatten)
+
+        model = Model(inputs=layer_input, outputs=layer_dense)
+        model.summary()
+
+        model.predict([np.random.random((1, 224, 3))])
+
     def test_avg_2d(self):
 
         layer_input = Input((224, 224, 3))
