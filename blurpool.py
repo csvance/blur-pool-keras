@@ -47,7 +47,7 @@ class MaxBlurPooling1D(Layer):
         return x
 
     def compute_output_shape(self, input_shape):
-        return input_shape[0], int(np.floor(input_shape[1] / 2)), input_shape[2]
+        return input_shape[0], int(np.ceil(input_shape[1] / 2)), input_shape[2]
 
 
 class MaxBlurPooling2D(Layer):
@@ -97,7 +97,7 @@ class MaxBlurPooling2D(Layer):
         return x
 
     def compute_output_shape(self, input_shape):
-        return input_shape[0], int(np.floor(input_shape[1] / 2)), int(np.floor(input_shape[2] / 2)), input_shape[3]
+        return input_shape[0], int(np.ceil(input_shape[1] / 2)), int(np.ceil(input_shape[2] / 2)), input_shape[3]
 
 
 class AverageBlurPooling1D(Layer):
@@ -141,7 +141,7 @@ class AverageBlurPooling1D(Layer):
         return x
 
     def compute_output_shape(self, input_shape):
-        return input_shape[0], int(np.floor(input_shape[1] / 2)), input_shape[2]
+        return input_shape[0], int(np.ceil(input_shape[1] / 2)), input_shape[2]
 
 
 class AverageBlurPooling2D(Layer):
@@ -191,7 +191,7 @@ class AverageBlurPooling2D(Layer):
         return x
 
     def compute_output_shape(self, input_shape):
-        return input_shape[0], int(np.floor(input_shape[1] / 2)), int(np.floor(input_shape[2] / 2)), input_shape[3]
+        return input_shape[0], int(np.ceil(input_shape[1] / 2)), int(np.ceil(input_shape[2] / 2)), input_shape[3]
 
 
 class BlurPool2D(Layer):
@@ -237,7 +237,7 @@ class BlurPool2D(Layer):
         return x
 
     def compute_output_shape(self, input_shape):
-        return input_shape[0], int(np.floor(input_shape[1] / 2)), int(np.floor(input_shape[2] / 2)), input_shape[3]
+        return input_shape[0], int(np.ceil(input_shape[1] / 2)), int(np.ceil(input_shape[2] / 2)), input_shape[3]
 
 
 class BlurPool1D(Layer):
@@ -279,4 +279,4 @@ class BlurPool1D(Layer):
         return x
 
     def compute_output_shape(self, input_shape):
-        return input_shape[0], int(np.floor(input_shape[1] / 2)), input_shape[2]
+        return input_shape[0], int(np.ceil(input_shape[1] / 2)), input_shape[2]
